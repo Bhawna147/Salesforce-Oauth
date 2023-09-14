@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+  <title>Django Salesforce OAuth | Project</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eceaff;
+      text-align: center;
+    }
+
+    h1 {
+        color: #333;
+        padding-top:10%;
+    }
+
+    .login {
+      background-color: #baceff;
+      border-radius: 9px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      width: 388px;
+      height: 280px;
+      margin: 0 auto;
+    }
+
+    .enhance{
+        margin-top: 10%; 
+        outline:none;
+    }
+    .enhance:hover {
+        padding: 4%;
+        outline:none;
+        background-color: black;
+    }
+</style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #000 ">
+    <a class="navbar-brand" style="color: white" href="/">Django Salesforce OAuth | Project</a>
+  </nav>
+  <div class="container pt-5">
+    {% if user.is_authenticated %}
+    <h1>Welcome to Mavlon!!</h1>
+    <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+    {% else %}
+    <div class="login">
+    <h1><b>Login Page</b></h1>
+    <p>Click to sign in with salesforce</p>    
+    <a href="{% url 'oauth' %}" class="btn btn-primary enhance" >Login with Salesforce</a>
+    <div>
+    {% endif %}
+  </div>
+</body>
+
+</html>
